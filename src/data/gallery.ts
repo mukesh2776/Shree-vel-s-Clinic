@@ -1,0 +1,95 @@
+import { GalleryImage } from '@/types';
+
+export const galleryImages: GalleryImage[] = [
+  {
+    id: 'clinic-exterior',
+    src: '/images/clinic-exterior.jpeg',
+    alt: "Shree Vel's Clinic building exterior in Thirukovilur with illuminated signage",
+    category: 'clinic',
+    width: 900,
+    height: 1200,
+  },
+  {
+    id: 'dr-bhavyashree-consultation',
+    src: '/images/dr-bhavyashree-consultation.jpeg',
+    alt: 'Dr. Bhavyashree S.P in her consultation room at Shree Vel\'s Clinic with Tamil Nadu Medical Council registration',
+    category: 'doctors',
+    width: 900,
+    height: 1200,
+  },
+  {
+    id: 'dr-munivel-consultation',
+    src: '/images/dr-munivel-consultation.jpeg',
+    alt: 'Dr. M. Munivel in his consultation room at Shree Vel\'s Clinic with Tamil Nadu Medical Council registration and laser training certification',
+    category: 'doctors',
+    width: 900,
+    height: 1200,
+  },
+  {
+    id: 'result-wart-removal',
+    src: '/images/results/result-1.jpeg',
+    alt: 'Dermatology treatment result - wart and mole management at Shree Vel\'s Clinic',
+    category: 'results',
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 'result-scalp-treatment',
+    src: '/images/results/result-2.jpeg',
+    alt: 'Dermatology treatment result - scalp condition management at Shree Vel\'s Clinic',
+    category: 'results',
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 'result-hair-growth-1',
+    src: '/images/results/result-3.jpeg',
+    alt: 'Hair growth treatment result showing improvement at Shree Vel\'s Clinic',
+    category: 'results',
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 'result-hair-growth-2',
+    src: '/images/results/result-4.jpeg',
+    alt: 'Hair and scalp treatment result at Shree Vel\'s Clinic',
+    category: 'results',
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 'result-hair-growth-3',
+    src: '/images/results/result-5.jpeg',
+    alt: 'Hair growth treatment progress at Shree Vel\'s Clinic',
+    category: 'results',
+    width: 900,
+    height: 1200,
+  },
+  {
+    id: 'result-acne-scars',
+    src: '/images/results/result-6.jpeg',
+    alt: 'Acne scar treatment result at Shree Vel\'s Clinic',
+    category: 'results',
+    width: 1200,
+    height: 1200,
+  },
+  {
+    id: 'result-hair-growth-4',
+    src: '/images/results/result-7.jpeg',
+    alt: 'Hair treatment result showing improvement at Shree Vel\'s Clinic',
+    category: 'results',
+    width: 1200,
+    height: 1200,
+  },
+  {
+    id: 'result-skin-treatment',
+    src: '/images/results/result-8.jpeg',
+    alt: 'Skin condition treatment result at Shree Vel\'s Clinic',
+    category: 'results',
+    width: 900,
+    height: 1200,
+  },
+];
+
+export const getGalleryByCategory = (category: string) =>
+  galleryImages.filter((img) => img.category === category);

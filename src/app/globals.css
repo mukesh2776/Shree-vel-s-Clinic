@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply font-body text-charcoal bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-accent text-white font-heading font-semibold rounded-xl
+           hover:bg-accent-500 active:bg-accent-600 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2
+           shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-heading font-semibold rounded-xl
+           hover:bg-primary-600 active:bg-primary-700 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
+           shadow-sm hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary font-heading font-semibold rounded-xl
+           hover:bg-primary hover:text-white transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden
+           transition-all duration-300 hover:shadow-card-hover;
+  }
+
+  .gradient-green {
+    background: linear-gradient(135deg, #176B4D 0%, #1a7d5a 100%);
+  }
+
+  .gradient-green-light {
+    background: linear-gradient(135deg, #EAF5EF 0%, #d0eadf 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ===== Premium Opening Animation ===== */
+@keyframes opening-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes opening-exit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes opening-bg-exit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes skip-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.opening-animation-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.opening-animation-overlay.opening-animation-exit {
+  animation: opening-bg-exit 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+.opening-animation-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  opacity: 0;
+}
+
+@media (max-width: 640px) {
+  .opening-animation-container {
+    width: 70vw;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 400px) {
+  .opening-animation-container {
+    width: 80vw;
+    max-width: 280px;
+  }
+}
+
+.opening-animation-container.opening-animation-reveal {
+  animation: opening-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.opening-animation-container.opening-animation-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.opening-animation-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  mix-blend-mode: multiply;
+  background: transparent;
+  display: block;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  pointer-events: none;
+}
+
+/* Skip hint */
+.opening-animation-skip {
+  position: absolute;
+  bottom: max(24px, env(safe-area-inset-bottom, 24px));
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.opening-animation-skip-visible {
+  animation: skip-fade-in 0.5s 1s ease forwards;
+}
+
+.opening-animation-skip span {
+  display: inline-block;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(4px);
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* WhatsApp button pulse */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-pulse {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+/* Appointment button pulse */
+@keyframes appointment-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(234, 127, 46, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(234, 127, 46, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(234, 127, 46, 0);
+  }
+}
+
+.appointment-pulse {
+  animation: appointment-pulse 2s infinite;
+}
