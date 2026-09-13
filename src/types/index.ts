@@ -50,7 +50,11 @@ export interface ResultMedia {
   treatment: string;
   doctor: string;
   description: string;
-  category: 'hair' | 'acne-skin' | 'wart-lesion' | 'all';
+  category: 'hair' | 'acne-skin' | 'wart-lesion' | 'vitiligo' | 'all';
+  condition?: string;
+  treatmentApproach?: string;
+  duration?: string;
+  outcome?: string;
 }
 
 export interface FAQItem {
@@ -74,6 +78,8 @@ export interface Testimonial {
   review: string;
   rating: number;
   location?: string;
+  date?: string;
+  source?: string;
 }
 
 export interface ClinicInfo {

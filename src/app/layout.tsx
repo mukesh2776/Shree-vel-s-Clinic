@@ -5,6 +5,7 @@ import OpeningAnimation from '@/components/OpeningAnimation';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import FloatingCallButton from '@/components/FloatingCallButton';
 import FloatingAppointmentButton from '@/components/FloatingAppointmentButton';
 
 const manrope = Manrope({
@@ -107,6 +108,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow pt-20 md:pt-24">{children}</main>
         <Footer />
+        <FloatingCallButton />
         <WhatsAppButton />
         <FloatingAppointmentButton />
       </body>

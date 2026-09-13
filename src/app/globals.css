@@ -79,11 +79,13 @@
   }
 }
 
-/* ===== Premium Opening Animation ===== */
-@keyframes opening-reveal {
+/* ===== Premium Intro Animation ===== */
+
+/* --- Keyframes --- */
+@keyframes introScaleIn {
   0% {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(0.88);
   }
   100% {
     opacity: 1;
@@ -91,31 +93,10 @@
   }
 }
 
-@keyframes opening-exit {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.04);
-  }
-}
-
-@keyframes opening-bg-exit {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes skip-fade-in {
+@keyframes introFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(22px);
   }
   100% {
     opacity: 1;
@@ -123,98 +104,281 @@
   }
 }
 
-.opening-animation-overlay {
+@keyframes introDividerExpand {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes introPhotoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.93) translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes introOverlayExit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.03);
+    visibility: hidden;
+  }
+}
+
+@keyframes introSkipFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* --- Overlay --- */
+.intro-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  background-color: #ffffff;
+  background: linear-gradient(170deg, #EAF5EF 0%, #FCFAF5 45%, #ffffff 100%);
   cursor: pointer;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
-.opening-animation-overlay.opening-animation-exit {
-  animation: opening-bg-exit 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.intro-overlay-exit {
+  animation: introOverlayExit 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   pointer-events: none;
 }
 
-.opening-animation-container {
-  position: relative;
+/* --- Decorative accent bar at top --- */
+.intro-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #176B4D 0%, #48AB7F 40%, #E58A2B 100%);
+  opacity: 0;
+  animation: introFadeUp 0.5s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* --- Content container --- */
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 20px;
+  max-width: 600px;
+  width: 100%;
+  gap: 0;
+}
+
+/* --- Logo --- */
+.intro-logo {
+  opacity: 0;
+  animation: introScaleIn 0.7s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  margin-bottom: 20px;
+}
+
+.intro-logo-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  object-fit: contain;
+  box-shadow: 0 4px 24px rgba(23, 107, 77, 0.12), 0 1px 4px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  padding: 8px;
+}
+
+/* --- Clinic name --- */
+.intro-clinic-name {
+  opacity: 0;
+  animation: introFadeUp 0.65s 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #176B4D;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+}
+
+/* --- Specialty --- */
+.intro-specialty {
+  opacity: 0;
+  animation: introFadeUp 0.6s 1.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748B;
+  letter-spacing: 0.02em;
+  margin: 0 0 16px 0;
+}
+
+/* --- Decorative divider --- */
+.intro-divider {
+  opacity: 0;
+  animation: introFadeUp 0.5s 1.6s cubic-bezier(0.16, 1, 0.3, 1) both;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 60vw;
-  max-width: 420px;
-  aspect-ratio: 1 / 1;
-  opacity: 0;
+  gap: 10px;
+  margin: 0 0 16px 0;
 }
 
-@media (max-width: 640px) {
-  .opening-animation-container {
-    width: 70vw;
-    max-width: 320px;
-  }
-}
-
-@media (max-width: 400px) {
-  .opening-animation-container {
-    width: 80vw;
-    max-width: 280px;
-  }
-}
-
-.opening-animation-container.opening-animation-reveal {
-  animation: opening-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.opening-animation-container.opening-animation-active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.opening-animation-video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  mix-blend-mode: multiply;
-  background: transparent;
+.intro-divider-line {
   display: block;
+  width: 40px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #176B4D, transparent);
+  border-radius: 1px;
+}
+
+.intro-divider-diamond {
+  font-size: 0.5rem;
+  color: #E58A2B;
+  line-height: 1;
+}
+
+/* --- Tagline --- */
+.intro-tagline {
+  opacity: 0;
+  animation: introFadeUp 0.6s 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #1F2933;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  max-width: 380px;
+}
+
+/* --- Doctor photograph --- */
+.intro-photo-container {
+  opacity: 0;
+  animation: introPhotoReveal 0.75s 2.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.intro-video-wrapper {
+  position: relative;
+  width: 260px;
+  max-width: 80vw;
+  border-radius: 20px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.intro-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  mix-blend-mode: screen;
   border: none;
   outline: none;
-  -webkit-appearance: none;
   pointer-events: none;
 }
 
-/* Skip hint */
-.opening-animation-skip {
+/* --- Skip hint --- */
+.intro-skip-hint {
   position: absolute;
-  bottom: max(24px, env(safe-area-inset-bottom, 24px));
+  bottom: max(20px, env(safe-area-inset-bottom, 20px));
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
+  animation: introSkipFade 0.5s 1.5s ease both;
   pointer-events: none;
-  transition: opacity 0.3s ease;
 }
 
-.opening-animation-skip-visible {
-  animation: skip-fade-in 0.5s 1s ease forwards;
-}
-
-.opening-animation-skip span {
+.intro-skip-hint span {
   display: inline-block;
   font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: #9ca3af;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 6px 16px;
+  padding: 5px 14px;
   border-radius: 9999px;
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(23, 107, 77, 0.06);
   backdrop-filter: blur(4px);
+}
+
+/* --- Responsive --- */
+@media (min-width: 768px) {
+  .intro-logo-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    padding: 10px;
+  }
+
+  .intro-clinic-name {
+    font-size: 2.25rem;
+    letter-spacing: 0.07em;
+  }
+
+  .intro-specialty {
+    font-size: 1.05rem;
+  }
+
+  .intro-tagline {
+    font-size: 1rem;
+  }
+
+  .intro-video-wrapper {
+    width: 320px;
+  }
+
+  .intro-divider-line {
+    width: 56px;
+  }
+}
+
+@media (max-width: 380px) {
+  .intro-clinic-name {
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+  }
+
+  .intro-specialty {
+    font-size: 0.82rem;
+  }
+
+  .intro-tagline {
+    font-size: 0.8rem;
+    max-width: 260px;
+  }
+
+  .intro-logo-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .intro-video-wrapper {
+    width: 200px;
+  }
 }
 
 /* Lightbox */

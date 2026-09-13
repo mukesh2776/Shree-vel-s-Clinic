@@ -2,65 +2,169 @@ import { Service } from '@/types';
 
 export const dermatologyServices: Service[] = [
   {
-    id: 'skin-diseases',
-    name: 'Skin Disease Management',
+    id: 'acne-scar-clinic',
+    name: 'Acne & Acne Scar Clinic',
     description:
-      'Comprehensive diagnosis and treatment for various skin conditions including psoriasis, fungal infections, eczema, urticaria, and other dermatological conditions.',
-    details: ['Psoriasis', 'Fungal Infections', 'Eczema', 'Urticaria', 'Other Skin Conditions'],
-    department: 'dermatology',
-    icon: '🩺',
-  },
-  {
-    id: 'hair-growth',
-    name: 'Hair & Scalp Treatments',
-    description:
-      'Advanced hair growth treatments using PRP therapy, GFC (Growth Factor Concentrate), and other growth factor-based approaches for hair loss and scalp conditions.',
-    details: ['PRP Therapy', 'GFC (Growth Factor Concentrate)', 'Growth Factor Treatments'],
-    department: 'dermatology',
-    icon: '💆',
-  },
-  {
-    id: 'acne-scars',
-    name: 'Acne & Acne Scar Treatment',
-    description:
-      'Specialised treatment for active acne and acne scarring using PRP, microneedling, scar revision, and other evidence-based approaches.',
-    details: ['PRP', 'Microneedling', 'Scar Revision'],
+      'Treat acne early. Prevent and manage acne scars appropriately. Evidence-based protocols tailored to active breakout severity and scar morphology.',
+    details: [
+      'Medical acne treatment',
+      'Indication-based chemical peels',
+      'Fractional microneedling',
+      'Subcision for tethered scars',
+      'Fractional CO₂ laser where appropriate',
+      'Personalised combination therapy',
+    ],
     department: 'dermatology',
     icon: '✨',
   },
   {
-    id: 'vitiligo',
-    name: 'Vitiligo Management',
+    id: 'hair-scalp-clinic',
+    name: 'Hair & Scalp Clinic',
     description:
-      'Comprehensive vitiligo care including excimer laser therapy, medical management, and surgical treatment options.',
-    details: ['Excimer Laser Therapy', 'Medical Treatment', 'Surgical Treatments'],
+      'Hair loss is not one disease — proper diagnosis comes first. Personalised treatment, not a one-size-fits-all approach.',
+    details: [
+      'Trichoscopy-guided scalp assessment',
+      'Male & Female Pattern Hair Loss',
+      'Telogen Effluvium & Alopecia Areata',
+      'Autologous PRP therapy',
+      'GFC (Growth Factor Concentrate) therapy',
+      'Scalp disorders & Seborrhoeic Dermatitis',
+    ],
+    department: 'dermatology',
+    icon: '💆',
+  },
+  {
+    id: 'advanced-chemical-peels',
+    name: 'Advanced Chemical Peels',
+    description:
+      'Standardised, indication-based chemical peel treatments selected strictly according to skin type, phototype, and clinical diagnosis without unverified claims.',
+    details: [
+      'Pigmentation & Melasma care',
+      'Active acne management',
+      'Post-acne marks & erythema',
+      'Uneven skin tone refinement',
+      'Epidermal texture renewal',
+    ],
+    department: 'dermatology',
+    icon: '🧪',
+  },
+  {
+    id: 'co2-laser',
+    name: 'CO₂ Laser Treatment',
+    description:
+      'Fractional CO₂ laser resurfacing and surgical ablation. Treatment is rigorously selected according to dermatological diagnosis, Fitzpatrick skin type, and tissue depth.',
+    details: [
+      'Atrophic acne scar revision',
+      'Selected traumatic & surgical scars',
+      'Skin texture irregularities',
+      'Selected benign epidermal lesions',
+      'Customised downtime management',
+    ],
     department: 'dermatology',
     icon: '🔬',
   },
   {
-    id: 'pigmentation',
-    name: 'Pigmentation Treatment',
+    id: 'microdermabrasion',
+    name: 'Microdermabrasion',
     description:
-      'Professional treatments for skin pigmentation concerns using chemical peels, microdermabrasion, PRP, and other dermatological approaches.',
-    details: ['Chemical Peels', 'Microdermabrasion', 'PRP'],
+      'In-clinic clinical microdermabrasion system for gentle mechanical exfoliation. Treatment suitability depends on individual skin condition and barrier integrity.',
+    details: [
+      'Uneven skin texture smoothing',
+      'Superficial skin tone correction',
+      'Dull-looking skin revitalization',
+      'Superficial skin concern clearance',
+      'Barrier-safe clinical protocols',
+    ],
+    department: 'dermatology',
+    icon: '💎',
+  },
+  {
+    id: 'combination-therapy',
+    name: 'Personalised Combination Therapy',
+    description:
+      'One treatment does not suit every patient. Based on diagnosis, severity, skin type, and goals, scientific multi-modality combinations are designed.',
+    details: [
+      'Medical treatment + Procedures',
+      'Chemical Peel + Medical treatment',
+      'Microneedling + Medical treatment',
+      'Laser + Supportive treatment',
+      'Hair-loss medical + Regenerative procedures',
+      'Scar treatment + Combination procedures',
+    ],
+    department: 'dermatology',
+    icon: '🧬',
+  },
+  {
+    id: 'pigmentation-skin-tone',
+    name: 'Pigmentation & Skin Tone',
+    description:
+      'Comprehensive dermatological management of localized and diffuse pigmentation concerns, combining evidence-based topical actives, sun protection, and procedural interventions.',
+    details: [
+      'Facial pigmentation & Melasma',
+      'Post-inflammatory hyperpigmentation',
+      'Uneven skin tone & sun damage',
+      'Broad-spectrum photoprotection advice',
+      'Combination peel & medical protocols',
+    ],
     department: 'dermatology',
     icon: '🌟',
   },
   {
-    id: 'wart-mole',
-    name: 'Wart, Skin Tag & Mole Removal',
+    id: 'vitiligo-care',
+    name: 'Vitiligo Care',
     description:
-      'Safe and effective removal of warts, skin tags, and moles using radiofrequency and electrocautery excision techniques.',
-    details: ['Radiofrequency Removal', 'Electrocautery Excision'],
+      'Patient education-focused vitiligo management. Vitiligo is a treatable skin condition and is not contagious. Options presented according to disease extent, activity, and response.',
+    details: [
+      'Targeted medical & topical therapy',
+      'Phototherapy guidance',
+      'Excimer-based treatment where appropriate',
+      'Combination repigmentation protocols',
+      'Objective follow-up photographic monitoring',
+    ],
+    department: 'dermatology',
+    icon: '🩺',
+  },
+  {
+    id: 'skin-diseases',
+    name: 'Clinical Dermatology & Skin Diseases',
+    description:
+      'Accurate diagnostic workup and medical management for common and chronic dermatological diseases across all age groups.',
+    details: [
+      'Eczema & Atopic Dermatitis',
+      'Psoriasis management',
+      'Fungal infections & Tinea',
+      'Urticaria & Skin Allergies',
+      'Pediatric & Geriatric Dermatology',
+    ],
     department: 'dermatology',
     icon: '⚕️',
   },
   {
-    id: 'sti',
-    name: 'Venereology (STI Care)',
+    id: 'radiofrequency-surgery',
+    name: 'RF Minor Surgery & Lesion Removal',
     description:
-      'Confidential consultation, counselling, and management for sexually transmitted infections including genital ulcers, discharge, and related conditions.',
-    details: ['Genital Ulcers', 'Discharge Management', 'Counseling & Management'],
+      'Minimally invasive, precise radiofrequency ablation and electrosurgical excision for benign lesions with minimal bleeding and optimal tissue preservation.',
+    details: [
+      'Facial & neck skin tags (Acrochordons)',
+      'Viral warts & Verruca vulgaris',
+      'Seborrhoeic keratoses',
+      'Benign intradermal naevi / moles',
+      'Milia & comedone extraction',
+    ],
+    department: 'dermatology',
+    icon: '⚡',
+  },
+  {
+    id: 'venereology-sti',
+    name: 'Venereology & Sexual Health (STI)',
+    description:
+      'Strictly confidential, empathetic clinical consultations, diagnosis, counselling, and medical management for sexually transmitted infections.',
+    details: [
+      'Genital ulcer disease evaluation',
+      'Discharge syndromes & STI screening',
+      'Confidential partner counselling',
+      'Preventive education & treatment plans',
+    ],
     department: 'dermatology',
     icon: '🛡️',
   },
@@ -101,20 +205,18 @@ export const obstetricsServices: Service[] = [
   },
   {
     id: 'pcod',
-    name: 'PCOD Treatment',
+    name: 'PCOD / PCOS Treatment',
     description:
-      'Diagnosis and management of Polycystic Ovarian Disease (PCOD) with personalised treatment plans for hormonal balance and symptom relief.',
+      'Holistic approach to managing Polycystic Ovarian Disease through lifestyle modification, dietary counseling, and medical therapy.',
     department: 'obstetrics-gynaecology',
-    icon: '💊',
+    icon: '🌸',
   },
   {
-    id: 'contraceptive',
-    name: 'Contraceptive Counselling & Services',
+    id: 'contraception',
+    name: 'Contraceptive Counselling',
     description:
-      'Confidential counselling and guidance on contraceptive options suited to individual needs and family planning goals.',
+      'Personalised family planning advice and contraceptive options tailored to your lifestyle and health needs.',
     department: 'obstetrics-gynaecology',
-    icon: '❤️',
+    icon: '🛡️',
   },
 ];
-
-export const allServices: Service[] = [...dermatologyServices, ...obstetricsServices];

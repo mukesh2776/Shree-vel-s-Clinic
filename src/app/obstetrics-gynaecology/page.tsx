@@ -5,7 +5,6 @@ import { getDoctorByDepartment } from '@/data/doctors';
 import { obstetricsServices } from '@/data/services';
 import ServiceCard from '@/components/ui/ServiceCard';
 import FAQSection from '@/components/home/FAQSection';
-import TestimonialSection from '@/components/home/TestimonialSection';
 
 export const metadata: Metadata = {
   title: 'Obstetrics & Gynaecology | Shree Vel\'s Clinic',
@@ -68,8 +67,6 @@ export default function ObstetricsGynaecologyPage() {
         </div>
       </section>
 
-      {/* Doctor Testimonials */}
-      <TestimonialSection />
 
       {/* Women's Health FAQ */}
       <FAQSection />

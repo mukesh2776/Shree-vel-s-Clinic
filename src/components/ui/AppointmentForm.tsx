@@ -131,8 +131,8 @@ export default function AppointmentForm() {
               className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors bg-white"
             >
               <option value="">Select Time Slot</option>
-              <option value="Morning (9 AM - 1 PM)">Morning (9 AM - 1 PM)</option>
-              <option value="Evening (5 PM - 9 PM)">Evening (5 PM - 9 PM)</option>
+              <option value="Afternoon (1.30 PM - 4.30 PM)">Afternoon (1.30 PM - 4.30 PM)</option>
+              <option value="Evening (5.30 PM - 8.30 PM)">Evening (5.30 PM - 8.30 PM)</option>
             </select>
           </div>
         </div>

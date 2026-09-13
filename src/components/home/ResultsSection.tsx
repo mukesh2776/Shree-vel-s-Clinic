@@ -9,13 +9,14 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default function ResultsSection() {
-  const [activeFilter, setActiveFilter] = useState<'all' | 'hair' | 'acne-skin' | 'wart-lesion' | 'videos'>('all');
+  const [activeFilter, setActiveFilter] = useState<'all' | 'hair' | 'acne-skin' | 'vitiligo' | 'wart-lesion' | 'videos'>('all');
   const [selectedVideo, setSelectedVideo] = useState<ResultMedia | null>(null);
   const [selectedImage, setSelectedImage] = useState<ResultMedia | null>(null);
 
   const filteredItems = clinicalResults.filter((item) => {
     if (activeFilter === 'all') return true;
     if (activeFilter === 'videos') return item.type === 'video';
+    if (activeFilter === 'vitiligo') return item.category === 'vitiligo';
     return item.category === activeFilter && item.type === 'image';
   });
 
@@ -24,8 +25,8 @@ export default function ResultsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <SectionHeading
-            title="Real Clinical Results"
-            subtitle="Documented patient progress and treatment outcomes under Dr. M. Munivel's specialized care"
+            title="DOCUMENTED CLINICAL OUTCOMES"
+            subtitle="Objective photographic and clinical progression records under Dr. M. Munivel's evidence-based care in Thirukovilur"
             centered
           />
         </ScrollReveal>
@@ -33,11 +34,12 @@ export default function ResultsSection() {
         {/* Filter Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8 mb-12">
           {[
-            { key: 'all', label: 'All Results' },
-            { key: 'hair', label: 'Hair Growth & PRP' },
-            { key: 'acne-skin', label: 'Acne Scars & Skin' },
-            { key: 'wart-lesion', label: 'Wart & Lesion Removal' },
-            { key: 'videos', label: '🎥 Treatment Videos' },
+            { key: 'all', label: 'All Outcomes' },
+            { key: 'hair', label: 'Hair & Scalp' },
+            { key: 'acne-skin', label: 'Acne, Scars & Skin' },
+            { key: 'vitiligo', label: 'Vitiligo Care' },
+            { key: 'wart-lesion', label: 'Wart & Minor Surgeries' },
+            { key: 'videos', label: '🎥 Clinical Videos' },
           ].map((tab) => (
             <button
               key={tab.key}
@@ -57,7 +59,7 @@ export default function ResultsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredItems.map((item, index) => (
             <ScrollReveal key={item.id} animation="fade-up" delay={index * 80}>
-              <div className="card h-full flex flex-col group overflow-hidden border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300">
+              <div className="card h-full flex flex-col group overflow-hidden border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 bg-white">
                 {/* Media Wrapper */}
                 <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden cursor-pointer">
                   {item.type === 'image' ? (
@@ -72,12 +74,12 @@ export default function ResultsSection() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
-                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="bg-white/90 text-primary font-heading font-semibold text-xs px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+                      <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="bg-white/95 text-primary font-heading font-semibold text-xs px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                           </svg>
-                          View Full Image
+                          Inspect Case Photo
                         </span>
                       </div>
                     </div>
@@ -98,27 +100,56 @@ export default function ResultsSection() {
                           </svg>
                         </div>
                       </div>
-                      <span className="absolute bottom-3 left-3 bg-black/60 text-white text-[10px] font-semibold px-2.5 py-1 rounded-md">
-                        Video
+                      <span className="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-semibold px-2.5 py-1 rounded-md">
+                        Clinical Video
                       </span>
                     </div>
                   )}
 
-                  {/* Badge */}
-                  <span className="absolute top-3 left-3 bg-primary text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm">
+                  {/* Treatment Tag */}
+                  <span className="absolute top-3 left-3 bg-primary text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-sm max-w-[80%] truncate">
                     {item.treatment}
                   </span>
                 </div>
 
-                {/* Content */}
-                <div className="p-5 flex flex-col flex-1">
+                {/* Structured Clinical Breakdown */}
+                <div className="p-5 flex flex-col flex-1 bg-white">
                   <h3 className="font-heading font-bold text-base text-charcoal mb-1 group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <div className="text-xs text-accent font-semibold mb-2.5">
-                    Lead: {item.doctor}
+                  <div className="text-[11px] text-accent font-semibold mb-3">
+                    Consultant: {item.doctor}
                   </div>
-                  <p className="text-xs sm:text-sm text-secondary-text leading-relaxed flex-1">
+
+                  {/* Short Format Clinical Details */}
+                  <div className="space-y-2 text-xs text-charcoal/90 bg-cream/70 p-3 rounded-xl border border-gray-100 mb-3">
+                    {item.condition && (
+                      <div>
+                        <strong className="text-primary font-semibold block text-[11px]">Condition:</strong>
+                        <span className="text-secondary-text">{item.condition}</span>
+                      </div>
+                    )}
+                    {item.treatmentApproach && (
+                      <div>
+                        <strong className="text-primary font-semibold block text-[11px]">Treatment Approach:</strong>
+                        <span className="text-secondary-text">{item.treatmentApproach}</span>
+                      </div>
+                    )}
+                    {item.duration && (
+                      <div>
+                        <strong className="text-primary font-semibold block text-[11px]">Duration / Follow-up:</strong>
+                        <span className="text-secondary-text">{item.duration}</span>
+                      </div>
+                    )}
+                    {item.outcome && (
+                      <div>
+                        <strong className="text-emerald-700 font-semibold block text-[11px]">Clinical Outcome:</strong>
+                        <span className="text-secondary-text">{item.outcome}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <p className="text-xs text-secondary-text leading-relaxed flex-1">
                     {item.description}
                   </p>
                 </div>
@@ -127,14 +158,16 @@ export default function ResultsSection() {
           ))}
         </div>
 
-        {/* Medical disclaimer note */}
-        <p className="text-center text-xs text-secondary-text mt-8 max-w-2xl mx-auto italic">
-          *Note: All clinical photographs and videos are genuine cases treated at Shree Vel&apos;s Clinic. Individual results may vary depending on patient age, baseline condition, and treatment compliance.
-        </p>
+        {/* Ethical Medical Notice */}
+        <div className="mt-10 p-4 rounded-xl bg-gray-50 border border-gray-100 max-w-3xl mx-auto text-center">
+          <p className="text-xs text-secondary-text leading-relaxed">
+            <strong className="text-charcoal font-semibold">Clinical Notice:</strong> All photographic documentation depicts genuine clinical cases assessed and treated at Shree Vel&apos;s Clinic under Dr. M. Munivel, MD (DVL). Outcomes vary based on patient diagnosis, severity, individual biological response, and treatment adherence. We uphold ethical medical standards and do not make unsubstantiated or guaranteed claims.
+          </p>
+        </div>
 
         <div className="text-center mt-8">
           <Link href="/appointment" className="btn-primary inline-flex items-center gap-2">
-            <span>Book Consultation For Your Condition</span>
+            <span>Schedule A Clinical Evaluation</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -177,7 +210,8 @@ export default function ResultsSection() {
               />
             </div>
             <div className="p-4 text-xs text-gray-300 bg-black/40">
-              {selectedVideo.description}
+              <p className="font-semibold text-white mb-1">Observed Outcome:</p>
+              {selectedVideo.outcome || selectedVideo.description}
             </div>
           </div>
         </div>
@@ -217,8 +251,16 @@ export default function ResultsSection() {
                 sizes="(max-width: 1024px) 100vw, 80vw"
               />
             </div>
-            <div className="p-4 text-xs text-gray-300 bg-black/40">
-              {selectedImage.description}
+            <div className="p-4 text-xs text-gray-300 bg-black/40 space-y-1">
+              {selectedImage.condition && (
+                <p><span className="text-white font-medium">Condition:</span> {selectedImage.condition}</p>
+              )}
+              {selectedImage.treatmentApproach && (
+                <p><span className="text-white font-medium">Approach:</span> {selectedImage.treatmentApproach}</p>
+              )}
+              {selectedImage.outcome && (
+                <p><span className="text-emerald-400 font-medium">Outcome:</span> {selectedImage.outcome}</p>
+              )}
             </div>
           </div>
         </div>

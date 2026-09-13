@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Hero from '@/components/home/Hero';
 import SpecialtySection from '@/components/home/SpecialtySection';
+import TreatmentPhilosophy from '@/components/home/TreatmentPhilosophy';
+import TreatmentCategoriesGrid from '@/components/home/TreatmentCategoriesGrid';
 import ClinicVideoSection from '@/components/home/ClinicVideoSection';
 import DoctorsPreview from '@/components/home/DoctorsPreview';
 import FeaturedServices from '@/components/home/FeaturedServices';
@@ -16,7 +18,7 @@ import LocationSection from '@/components/home/LocationSection';
 export const metadata: Metadata = {
   title: "Shree Vel's Clinic | Dermatology & Women's Health Clinic in Thirukovilur",
   description:
-    "Shree Vel's Skin Care & Women's Health Clinic in Thirukovilur provides specialized dermatology, aesthetic surgery, obstetrics, and gynaecology care by Dr. M. Munivel and Dr. Bhavyashree S.P. Where Skin Meets Care, Women Meets Comfort.",
+    "Shree Vel's Skin Care & Women's Health Clinic in Thirukovilur provides specialized dermatology, aesthetic surgery, obstetrics, and gynaecology care by Dr. M. Munivel and Dr. Bhavyashree S.P. Where Skin Meets Care, Women Meet Comfort.",
   keywords: [
     'dermatologist in Thirukovilur',
     'skin specialist Thirukovilur',
@@ -38,6 +40,14 @@ export default function Home() {
 
       <section id="specialties">
         <SpecialtySection />
+      </section>
+
+      <section id="approach">
+        <TreatmentPhilosophy />
+      </section>
+
+      <section id="treatment-categories">
+        <TreatmentCategoriesGrid />
       </section>
 
       <section id="clinic-video">

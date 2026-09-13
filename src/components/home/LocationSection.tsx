@@ -84,15 +84,33 @@ export default function LocationSection() {
                           <polyline points="12 6 12 12 16 14" strokeWidth={2} />
                         </svg>
                       </div>
-                      <div>
-                        <h4 className="font-heading font-bold text-sm text-charcoal">Consultation Hours</h4>
-                        <p className="text-xs sm:text-sm text-charcoal font-semibold mt-0.5">
-                          {openingHours.consultationDays}
-                        </p>
-                        <p className="text-xs text-secondary-text">
-                          {openingHours.hours}
-                        </p>
-                        <p className="text-[11px] text-accent font-medium mt-1">
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between gap-2">
+                          <h4 className="font-heading font-bold text-sm text-charcoal">Doctor Consultation Hours</h4>
+                          <span className="text-[11px] text-primary font-semibold">{openingHours.consultationDays}</span>
+                        </div>
+
+                        <div className="mt-2.5 space-y-2">
+                          {/* Dermatology */}
+                          <div className="bg-light-green/60 p-2.5 rounded-lg border border-primary/10">
+                            <div className="flex items-center justify-between text-xs font-bold text-primary mb-0.5">
+                              <span>DERMATOLOGY CONSULTATION</span>
+                              <span className="text-[10px] font-medium text-secondary-text">Dr. Munivel</span>
+                            </div>
+                            <p className="text-xs text-charcoal font-semibold">1:30 PM – 4:30 PM &bull; 5:30 PM – 8:30 PM</p>
+                          </div>
+
+                          {/* Women's Health / OBGYN */}
+                          <div className="bg-accent-50/70 p-2.5 rounded-lg border border-accent/15">
+                            <div className="flex items-center justify-between text-xs font-bold text-accent-700 mb-0.5">
+                              <span>WOMEN’S HEALTH / OBGYN</span>
+                              <span className="text-[10px] font-medium text-secondary-text">Dr. Bhavyashree S.P</span>
+                            </div>
+                            <p className="text-xs text-charcoal font-semibold">5:00 PM – 8:30 PM</p>
+                          </div>
+                        </div>
+
+                        <p className="text-[11px] text-accent font-medium mt-2">
                           {openingHours.sunday}
                         </p>
                       </div>

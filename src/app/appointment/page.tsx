@@ -42,27 +42,40 @@ export default function AppointmentPage() {
 
           {/* Side Panel Info */}
           <div className="space-y-6">
-            <div className="bg-light-green p-6 rounded-2xl">
-              <h3 className="font-heading font-bold text-lg text-charcoal mb-4 flex items-center gap-2">
+            <div className="bg-light-green p-6 rounded-2xl border border-primary/10">
+              <h3 className="font-heading font-bold text-base text-charcoal mb-3 flex items-center gap-2">
                 <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
-                Clinic Hours
+                Doctor Consultation Hours
               </h3>
-              <ul className="space-y-2 text-secondary-text text-sm">
-                <li className="flex justify-between border-b border-gray-200 pb-2">
-                  <span>Mon - Sat</span>
-                  <span className="font-medium text-charcoal">Contact for hours</span>
-                </li>
-                <li className="flex justify-between pt-2">
-                  <span>Sunday</span>
-                  <span className="font-medium text-accent">By Appointment Only</span>
-                </li>
-              </ul>
-              <p className="text-xs text-secondary-text mt-3 italic">
-                Please contact the clinic to confirm current consultation hours.
-              </p>
+
+              <div className="space-y-3 text-xs">
+                {/* Dermatology */}
+                <div className="bg-white/80 p-3 rounded-xl border border-primary/15">
+                  <div className="flex items-center justify-between font-bold text-primary mb-1">
+                    <span>DERMATOLOGY</span>
+                    <span className="text-[11px] font-normal text-secondary-text">Dr. Munivel</span>
+                  </div>
+                  <p className="font-semibold text-charcoal">1:30 PM – 4:30 PM</p>
+                  <p className="font-semibold text-charcoal">5:30 PM – 8:30 PM</p>
+                </div>
+
+                {/* Women's Health */}
+                <div className="bg-white/80 p-3 rounded-xl border border-accent/20">
+                  <div className="flex items-center justify-between font-bold text-accent-700 mb-1">
+                    <span>WOMEN’S HEALTH / OBGYN</span>
+                    <span className="text-[11px] font-normal text-secondary-text">Dr. Bhavyashree S.P</span>
+                  </div>
+                  <p className="font-semibold text-charcoal">5:00 PM – 8:30 PM</p>
+                </div>
+
+                <div className="pt-2 border-t border-primary/15 flex justify-between items-center text-xs">
+                  <span className="text-secondary-text">Sunday</span>
+                  <span className="font-semibold text-accent">Prior Appointment Only</span>
+                </div>
+              </div>
             </div>
 
             <div className="bg-white border border-gray-100 p-6 rounded-2xl shadow-sm">

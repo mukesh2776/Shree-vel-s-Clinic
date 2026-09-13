@@ -2,14 +2,17 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+
+type Phase = 'idle' | 'animating' | 'exit' | 'done';
 
 export default function OpeningAnimation() {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
-  const [showAnimation, setShowAnimation] = useState(false);
-  const [phase, setPhase] = useState<'idle' | 'reveal' | 'playing' | 'exit'>('idle');
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [phase, setPhase] = useState<Phase>('idle');
   const hasTriggeredExit = useRef(false);
+  const exitTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const safetyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Mount check to prevent hydration mismatch
   useEffect(() => {
@@ -21,11 +24,19 @@ export default function OpeningAnimation() {
     if (!mounted) return;
     if (pathname !== '/') return;
 
+    // Respect prefers-reduced-motion
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motionQuery.matches) {
+      try {
+        sessionStorage.setItem('shree_vels_intro_played', 'true');
+      } catch { /* ignore */ }
+      return;
+    }
+
     try {
       const hasPlayed = sessionStorage.getItem('shree_vels_intro_played');
       if (!hasPlayed) {
-        setShowAnimation(true);
-        setPhase('reveal');
+        setPhase('animating');
       }
     } catch {
       // sessionStorage unavailable — skip animation
@@ -37,91 +48,107 @@ export default function OpeningAnimation() {
     hasTriggeredExit.current = true;
     setPhase('exit');
 
+    // After exit animation completes, remove overlay
     setTimeout(() => {
-      setShowAnimation(false);
+      setPhase('done');
       try {
         sessionStorage.setItem('shree_vels_intro_played', 'true');
-      } catch {
-        // Ignore storage errors
-      }
-    }, 900);
+      } catch { /* ignore */ }
+    }, 800);
   }, []);
 
-  // Start playing phase after initial reveal animation
+  // Auto-exit after the animation sequence completes (~3.8s)
   useEffect(() => {
-    if (phase !== 'reveal') return;
+    if (phase !== 'animating') return;
 
-    const revealTimer = setTimeout(() => {
-      setPhase('playing');
-      if (videoRef.current) {
-        videoRef.current.play().catch(() => {
-          // Autoplay blocked — exit gracefully
-          handleExit();
-        });
-      }
-    }, 400);
+    exitTimerRef.current = setTimeout(() => {
+      handleExit();
+    }, 3800);
 
-    return () => clearTimeout(revealTimer);
+    // Safety fallback — 6s max
+    safetyTimerRef.current = setTimeout(() => {
+      handleExit();
+    }, 6000);
+
+    return () => {
+      if (exitTimerRef.current) clearTimeout(exitTimerRef.current);
+      if (safetyTimerRef.current) clearTimeout(safetyTimerRef.current);
+    };
   }, [phase, handleExit]);
-
-  // Safety fallback timeout — 5 seconds max
-  useEffect(() => {
-    if (!showAnimation) return;
-
-    const fallbackTimer = setTimeout(() => {
-      handleExit();
-    }, 5000);
-
-    return () => clearTimeout(fallbackTimer);
-  }, [showAnimation, handleExit]);
-
-  // Respect prefers-reduced-motion
-  useEffect(() => {
-    if (!mounted) return;
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mq.matches && showAnimation) {
-      handleExit();
-    }
-  }, [mounted, showAnimation, handleExit]);
-
-  const handleVideoEnded = useCallback(() => {
-    handleExit();
-  }, [handleExit]);
 
   // Skip on click/tap anywhere
   const handleSkip = useCallback(() => {
     handleExit();
   }, [handleExit]);
 
-  // Don't render anything server-side or when not active
-  if (!mounted || !showAnimation || pathname !== '/') return null;
+  // Don't render anything server-side, when not active, or when done
+  if (!mounted || phase === 'idle' || phase === 'done' || pathname !== '/') return null;
+
+  const isExiting = phase === 'exit';
 
   return (
     <div
-      className={`opening-animation-overlay ${phase === 'exit' ? 'opening-animation-exit' : ''}`}
+      className={`intro-overlay ${isExiting ? 'intro-overlay-exit' : ''}`}
       onClick={handleSkip}
       role="presentation"
-      aria-label="Opening animation — click to skip"
+      aria-label="Opening animation — click or tap to skip"
     >
-      {/* Video container — tightly cropped, centered, blended */}
-      <div
-        className={`opening-animation-container ${
-          phase === 'reveal' ? 'opening-animation-reveal' : ''
-        } ${phase === 'playing' ? 'opening-animation-active' : ''}`}
-      >
-        <video
-          ref={videoRef}
-          src="/videos/intro.mp4"
-          className="opening-animation-video"
-          muted
-          playsInline
-          preload="auto"
-          onEnded={handleVideoEnded}
-        />
+      {/* Decorative gradient accent at top */}
+      <div className="intro-accent-bar" aria-hidden="true" />
+
+      {/* Main content container */}
+      <div className="intro-content">
+        {/* Logo */}
+        <div className="intro-logo">
+          <Image
+            src="/images/logo.jpeg"
+            alt="Shree Vel's Clinic Logo"
+            width={120}
+            height={120}
+            className="intro-logo-img"
+            priority
+          />
+        </div>
+
+        {/* Clinic name */}
+        <h1 className="intro-clinic-name">
+          SHREE VEL&apos;S CLINIC
+        </h1>
+
+        {/* Specialty text */}
+        <p className="intro-specialty">
+          Expert Dermatology &amp; Women&apos;s Health Care
+        </p>
+
+        {/* Decorative divider */}
+        <div className="intro-divider" aria-hidden="true">
+          <span className="intro-divider-line" />
+          <span className="intro-divider-diamond">◆</span>
+          <span className="intro-divider-line" />
+        </div>
+
+        {/* Tagline */}
+        <p className="intro-tagline">
+          &ldquo;Where Skin Meets Care, Women Meet Comfort&rdquo;
+        </p>
+
+        {/* Opening animation video */}
+        <div className="intro-photo-container">
+          <div className="intro-video-wrapper">
+            <video
+              src="/videos/intro.mp4"
+              className="intro-video"
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Subtle skip hint */}
-      <div className={`opening-animation-skip ${phase === 'playing' ? 'opening-animation-skip-visible' : ''}`}>
+      {/* Skip hint */}
+      <div className="intro-skip-hint">
         <span>Tap to skip</span>
       </div>
     </div>

@@ -109,6 +109,39 @@ export default function ContactPage() {
               </div>
             </div>
 
+            {/* Doctor Consultation Timings */}
+            <div className="bg-white p-6 rounded-2xl shadow-card border border-gray-100">
+              <h3 className="text-xl font-heading font-bold text-charcoal mb-4 flex items-center justify-between">
+                <span>Doctor Consultation Hours</span>
+                <span className="text-xs font-semibold text-primary bg-light-green px-3 py-1 rounded-full">
+                  Mon – Sat
+                </span>
+              </h3>
+
+              <div className="space-y-3 text-xs">
+                <div className="bg-light-green/60 p-3.5 rounded-xl border border-primary/10">
+                  <div className="flex items-center justify-between font-bold text-primary mb-1">
+                    <span className="font-heading">DERMATOLOGY CONSULTATION</span>
+                    <span className="text-secondary-text font-normal">Dr. Munivel</span>
+                  </div>
+                  <p className="font-semibold text-charcoal text-xs">1:30 PM – 4:30 PM</p>
+                  <p className="font-semibold text-charcoal text-xs">5:30 PM – 8:30 PM</p>
+                </div>
+
+                <div className="bg-accent-50/70 p-3.5 rounded-xl border border-accent/15">
+                  <div className="flex items-center justify-between font-bold text-accent-700 mb-1">
+                    <span className="font-heading">WOMEN’S HEALTH / OBGYN</span>
+                    <span className="text-secondary-text font-normal">Dr. Bhavyashree S.P</span>
+                  </div>
+                  <p className="font-semibold text-charcoal text-xs">5:00 PM – 8:30 PM</p>
+                </div>
+
+                <p className="text-xs text-secondary-text italic pt-1">
+                  *Sunday: Prior Appointment Only.
+                </p>
+              </div>
+            </div>
+
             <div className="rounded-2xl overflow-hidden shadow-card h-64 bg-gray-200 relative">
               <iframe
                 src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.4!2d${clinic.coordinates.lng}!3d${clinic.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDU3JzE2LjYiTiA3OcKwMTEnNTMuNSJF!5e0!3m2!1sen!2sin!4v1611234567890!5m2!1sen!2sin`}
