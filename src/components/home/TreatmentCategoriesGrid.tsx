@@ -31,8 +31,8 @@ const categories: CategoryGroup[] = [
     title: 'AESTHETIC DERMATOLOGY',
     icon: '✨',
     badge: 'Skin Aesthetics',
-    description: 'Scientifically calibrated procedural rejuvenation tailored to your skin tone and barrier integrity.',
-    items: ['Chemical Peels', 'Microneedling', 'Microdermabrasion', 'Laser', 'Skin Rejuvenation'],
+    description: 'Scientifically calibrated procedural rejuvenation using advanced equipment including Microneedling Radiofrequency (MRF) machine for acne scars.',
+    items: ['Chemical Peels', 'Microneedling', 'MRF (Microneedling RF)', 'Microdermabrasion', 'Laser', 'Skin Rejuvenation'],
   },
   {
     title: 'DERMATOLOGIC PROCEDURES',
@@ -116,7 +116,7 @@ export default function TreatmentCategoriesGrid() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
-                  <span className="text-[11px] text-secondary-text">Dr. M. Munivel, MD (DVL)</span>
+                  <span className="text-[11px] text-secondary-text">Dr. M. Munivel, MD (DVL), Fellowship in Laser & Aesthetic Surgery</span>
                 </div>
               </div>
             </ScrollReveal>

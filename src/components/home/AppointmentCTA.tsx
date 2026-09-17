@@ -96,6 +96,16 @@ export default function AppointmentCTA() {
                 <span className="font-semibold text-white">+91 {clinic.phone}</span>
               </a>
 
+              {clinic.alternatePhone && (
+                <a
+                  href={`tel:+91${clinic.alternatePhone}`}
+                  className="inline-flex items-center gap-1.5 hover:text-white transition-colors bg-white/10 px-3 py-1.5 rounded-lg"
+                >
+                  <span>📞 Alt:</span>
+                  <span className="font-semibold text-white">+91 733-8861038</span>
+                </a>
+              )}
+
               <a
                 href={whatsappUrl}
                 target="_blank"

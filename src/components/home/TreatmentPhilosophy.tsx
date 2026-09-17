@@ -53,7 +53,7 @@ export default function TreatmentPhilosophy() {
               OUR APPROACH
             </h2>
             <p className="text-sm sm:text-base text-secondary-text mt-3">
-              Evidence-based dermatological methodology practiced by Dr. M. Munivel, MD (DVL)
+              Evidence-based dermatological methodology practiced by Dr. M. Munivel, MD (DVL), Fellowship in Laser &amp; Aesthetic Surgery
             </p>
           </div>
         </ScrollReveal>

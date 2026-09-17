@@ -87,6 +87,7 @@ export interface ClinicInfo {
   fullName: string;
   tagline: string;
   phone: string;
+  alternatePhone?: string;
   whatsapp: string;
   email: string;
   mapsUrl: string;

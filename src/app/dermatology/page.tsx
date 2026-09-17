@@ -14,7 +14,7 @@ import AppointmentCTA from '@/components/home/AppointmentCTA';
 export const metadata: Metadata = {
   title: 'Dermatology, Venereology & Aesthetic Surgery | Shree Vel\'s Clinic',
   description:
-    'Evidence-based dermatology, PRP hair therapy, acne scar revision, CO₂ laser, chemical peels, and vitiligo care by Dr. M. Munivel, MD (DVL) in Thirukovilur.',
+    'Evidence-based dermatology, PRP hair therapy, acne scar revision, CO₂ laser, chemical peels, and vitiligo care by Dr. M. Munivel, MD (DVL), Fellowship in Laser & Aesthetic Surgery in Thirukovilur.',
 };
 
 export default function DermatologyPage() {
@@ -36,7 +36,7 @@ export default function DermatologyPage() {
           </h1>
 
           <p className="text-base sm:text-lg text-secondary-text max-w-2xl mx-auto mb-8 leading-relaxed">
-            Comprehensive diagnostic workup and tailored therapeutic modalities led by <strong className="text-charcoal font-semibold">Dr. M. Munivel, MD (DVL)</strong>. Where scientific precision meets compassionate skin and scalp care.
+            Comprehensive diagnostic workup and tailored therapeutic modalities led by <strong className="text-charcoal font-semibold">Dr. M. Munivel, MD (DVL), Fellowship in Laser &amp; Aesthetic Surgery</strong>. Where scientific precision meets compassionate skin and scalp care.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-charcoal font-medium">
@@ -88,7 +88,7 @@ export default function DermatologyPage() {
                   {doctor.title}
                 </p>
                 <p className="text-xs sm:text-sm text-secondary-text leading-relaxed">
-                  Registered with the Tamil Nadu Medical Council, Dr. Munivel has extensive training in clinical dermatology, venereology, dermatosurgery, and advanced aesthetic procedures. Consultations adhere to strict evidence-based clinical guidelines.
+                  Registered with the Tamil Nadu Medical Council, Dr. Munivel completed his MBBS and MD (DVL) from Tirunelveli Medical College and holds a Fellowship in Laser and Aesthetic Surgery. He has extensive training in clinical dermatology, venereology, dermatosurgery, and advanced aesthetic procedures. Consultations adhere to strict evidence-based clinical guidelines.
                 </p>
               </div>
             </div>

@@ -40,7 +40,7 @@ export default function ObstetricsGynaecologyPage() {
               <p className="text-accent font-semibold">{doctor.qualifications}</p>
               <p className="text-secondary-text text-sm mb-2">{doctor.title}</p>
               <span className="text-xs bg-cream text-accent px-3 py-1 rounded-full font-medium border border-accent/20">
-                TNMC Reg No: {doctor.registrationNumber} (Government Doctor)
+                TNMC Reg No: {doctor.registrationNumber} 
               </span>
               <p className="text-sm text-secondary-text mt-4 max-w-xl leading-relaxed">
                 {doctor.description}

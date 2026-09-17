@@ -75,8 +75,8 @@ export default function RootLayout({
     '@type': 'MedicalClinic',
     name: "Shree Vel's Skin Care & Women's Health Clinic",
     url: 'https://www.shreevelsclinic.com',
-    telephone: '+91-8778896736',
-    email: 'munivelshree@gmail.com',
+    telephone: ['+91-8778896736', '+91-7338861038'],
+    email: 'shreevelsclinic@gmail.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'No.84, South Street, Maruthamalaiyan Agencies Opposite',

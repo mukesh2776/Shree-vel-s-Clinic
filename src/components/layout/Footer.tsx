@@ -81,17 +81,20 @@ export default function Footer() {
                 </svg>
                 <span>No.84, South Street, Maruthamalaiyan Agencies Opposite, Thirukovilur - 605757</span>
               </li>
-              <li className="flex items-center gap-3 text-[#EAF5EF] text-sm">
-                <svg className="w-5 h-5 text-[#E58A2B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <li className="flex items-start gap-3 text-[#EAF5EF] text-sm">
+                <svg className="w-5 h-5 text-[#E58A2B] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                 </svg>
-                <a href="tel:+918778896736" className="hover:text-white transition-colors">+91 8778896736</a>
+                <div className="flex flex-col gap-0.5">
+                  <a href="tel:+918778896736" className="hover:text-white transition-colors">+91 87788 96736</a>
+                  <a href="tel:+917338861038" className="hover:text-white transition-colors">+91 733-8861038</a>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-[#EAF5EF] text-sm">
                 <svg className="w-5 h-5 text-[#E58A2B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
-                <a href="mailto:munivelshree@gmail.com" className="hover:text-white transition-colors">munivelshree@gmail.com</a>
+                <a href="mailto:shreevelsclinic@gmail.com" className="hover:text-white transition-colors">shreevelsclinic@gmail.com</a>
               </li>
             </ul>
           </div>

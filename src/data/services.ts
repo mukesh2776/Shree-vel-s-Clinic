@@ -9,7 +9,8 @@ export const dermatologyServices: Service[] = [
     details: [
       'Medical acne treatment',
       'Indication-based chemical peels',
-      'Fractional microneedling',
+      'Microneedling Radiofrequency (MRF) machine for acne scars',
+      'Fractional microneedling & collagen induction',
       'Subcision for tethered scars',
       'Fractional CO₂ laser where appropriate',
       'Personalised combination therapy',

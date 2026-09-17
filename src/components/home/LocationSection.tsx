@@ -125,10 +125,15 @@ export default function LocationSection() {
                       </div>
                       <div>
                         <h4 className="font-heading font-bold text-sm text-charcoal">Helpline &amp; Appointments</h4>
-                        <a href="tel:8778896736" className="text-xs sm:text-sm text-primary font-bold hover:underline block mt-0.5">
-                          +91 87788 96736
-                        </a>
-                        <p className="text-[11px] text-secondary-text">munivelshree@gmail.com</p>
+                        <div className="flex flex-col gap-0.5 mt-0.5">
+                          <a href="tel:8778896736" className="text-xs sm:text-sm text-primary font-bold hover:underline">
+                            +91 87788 96736
+                          </a>
+                          <a href="tel:7338861038" className="text-xs sm:text-sm text-primary font-bold hover:underline">
+                            +91 733-8861038
+                          </a>
+                        </div>
+                        <p className="text-[11px] text-secondary-text mt-1">shreevelsclinic@gmail.com</p>
                       </div>
                     </div>
                   </div>

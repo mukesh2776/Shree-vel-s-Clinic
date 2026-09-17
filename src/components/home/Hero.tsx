@@ -40,7 +40,7 @@ export default function Hero() {
 
                 {/* Subheading */}
                 <p className="text-base sm:text-lg text-secondary-text max-w-xl leading-relaxed">
-                  Specialist clinical dermatology, laser surgery, acne &amp; PRP treatments led by <strong className="text-charcoal font-semibold">Dr. M. Munivel, MD (DVL)</strong>, alongside dedicated women&apos;s health &amp; obstetric care by <strong className="text-charcoal font-semibold">Dr. Bhavyashree S.P, MS (OG)</strong>.
+                  Specialist clinical dermatology, laser surgery, acne &amp; PRP treatments led by <strong className="text-charcoal font-semibold">Dr. M. Munivel, MD (DVL), Fellowship in Laser &amp; Aesthetic Surgery</strong>, alongside dedicated women&apos;s health &amp; obstetric care by <strong className="text-charcoal font-semibold">Dr. Bhavyashree S.P, MS (OG), DNB (OG)</strong>.
                 </p>
 
                 {/* Key Feature Highlights */}
@@ -156,14 +156,14 @@ export default function Hero() {
                     priority
                   />
                   
-                  {/* Subtle bottom gradient overlay for legibility */}
-                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none" />
+                  {/* Stronger bottom gradient overlay for legibility */}
+                  <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/85 via-black/50 to-transparent pointer-events-none" />
 
                   {/* Doctor badge overlay */}
                   <div className="absolute bottom-4 inset-x-4 text-white z-10">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-accent-300">Consultant Dermatologist</p>
-                    <h3 className="text-lg font-bold font-heading">Dr. M. Munivel, MD (DVL)</h3>
-                    <p className="text-[11px] text-gray-200">Aesthetic Surgeon &bull; TNMC Reg: 131636</p>
+                    <p className="text-xs font-bold uppercase tracking-wider text-white bg-primary/80 backdrop-blur-sm inline-block px-2.5 py-1 rounded-md mb-1.5">Consultant Dermatologist</p>
+                    <h3 className="text-lg font-bold font-heading drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Dr. M. Munivel, MD (DVL)</h3>
+                    <p className="text-[11px] text-white/90 font-medium drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]">Fellowship in Laser &amp; Aesthetic Surgery &bull; TNMC Reg: 131636</p>
                   </div>
                 </div>
 

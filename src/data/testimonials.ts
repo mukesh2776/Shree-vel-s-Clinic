@@ -4,7 +4,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'google-rev-1',
     patientName: 'Maha',
-    doctorName: 'Dr. M. Munivel, MD (DVL)',
+    doctorName: 'Dr. M. Munivel, MD (DVL), Fellowship in Laser & Aesthetic Surgery',
     department: 'dermatology',
     treatment: 'Allergy & Skin Care',
     review:
@@ -17,7 +17,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'google-rev-2',
     patientName: 'Aslam Balkees',
-    doctorName: 'Dr. M. Munivel, MD (DVL)',
+    doctorName: 'Dr. M. Munivel, MD (DVL), Fellowship in Laser & Aesthetic Surgery',
     department: 'dermatology',
     treatment: 'Acne Scars & Pigmentation',
     review:
@@ -30,7 +30,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'google-rev-3',
     patientName: 'MohanaKrishnan R',
-    doctorName: 'Dr. M. Munivel, MD (DVL)',
+    doctorName: 'Dr. M. Munivel, MD (DVL), Fellowship in Laser & Aesthetic Surgery',
     department: 'dermatology',
     treatment: 'Radiofrequency Wart & Mole Removal',
     review:
@@ -43,7 +43,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'google-rev-4',
     patientName: 'Vetri Vel',
-    doctorName: 'Dr. M. Munivel, MD (DVL)',
+    doctorName: 'Dr. M. Munivel, MD (DVL), Fellowship in Laser & Aesthetic Surgery',
     department: 'dermatology',
     treatment: 'Chronic Fungal Infection & Allergy',
     review:
@@ -56,7 +56,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'google-rev-5',
     patientName: 'Aslam Ashfaq',
-    doctorName: 'Dr. M. Munivel, MD (DVL)',
+    doctorName: 'Dr. M. Munivel, MD (DVL), Fellowship in Laser & Aesthetic Surgery',
     department: 'dermatology',
     treatment: 'Hair Treatment',
     review:
@@ -69,7 +69,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 'google-rev-6',
     patientName: 'Balaji R',
-    doctorName: 'Dr. M. Munivel, MD (DVL)',
+    doctorName: 'Dr. M. Munivel, MD (DVL), Fellowship in Laser & Aesthetic Surgery',
     department: 'dermatology',
     treatment: 'Vitiligo Treatment',
     review:

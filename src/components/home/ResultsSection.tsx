@@ -161,7 +161,7 @@ export default function ResultsSection() {
         {/* Ethical Medical Notice */}
         <div className="mt-10 p-4 rounded-xl bg-gray-50 border border-gray-100 max-w-3xl mx-auto text-center">
           <p className="text-xs text-secondary-text leading-relaxed">
-            <strong className="text-charcoal font-semibold">Clinical Notice:</strong> All photographic documentation depicts genuine clinical cases assessed and treated at Shree Vel&apos;s Clinic under Dr. M. Munivel, MD (DVL). Outcomes vary based on patient diagnosis, severity, individual biological response, and treatment adherence. We uphold ethical medical standards and do not make unsubstantiated or guaranteed claims.
+            <strong className="text-charcoal font-semibold">Clinical Notice:</strong> All photographic documentation depicts genuine clinical cases assessed and treated at Shree Vel&apos;s Clinic under Dr. M. Munivel, MD (DVL), Fellowship in Laser &amp; Aesthetic Surgery. Outcomes vary based on patient diagnosis, severity, individual biological response, and treatment adherence. We uphold ethical medical standards and do not make unsubstantiated or guaranteed claims.
           </p>
         </div>
 
