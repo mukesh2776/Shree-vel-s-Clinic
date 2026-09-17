@@ -102,7 +102,7 @@ export default function AppointmentCTA() {
                   className="inline-flex items-center gap-1.5 hover:text-white transition-colors bg-white/10 px-3 py-1.5 rounded-lg"
                 >
                   <span>📞 Alt:</span>
-                  <span className="font-semibold text-white">+91 733-8861038</span>
+                  <span className="font-semibold text-white">+91 {clinic.alternatePhone}</span>
                 </a>
               )}
 

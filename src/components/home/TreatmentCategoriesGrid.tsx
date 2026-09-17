@@ -144,10 +144,10 @@ export default function TreatmentCategoriesGrid() {
                   Book In-Person Consultation
                 </Link>
                 <a
-                  href="tel:+918778896736"
+                  href="tel:+917338861038"
                   className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl border border-white/30 text-xs font-semibold text-white hover:bg-white/10 transition-colors text-center"
                 >
-                  <span>Quick Phone Inquiry: +91 87788 96736</span>
+                  <span>Quick Phone Inquiry: +91 73388 61038</span>
                 </a>
               </div>
             </div>

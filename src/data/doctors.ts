@@ -19,6 +19,7 @@ export const doctors: Doctor[] = [
       'Pigmentation Treatment',
       'Wart & Mole Removal',
       'Vitiligo Management',
+      'Nail Disorders & Treatment',
       'Aesthetic Procedures',
       'STI Counseling & Management',
     ],
@@ -33,7 +34,7 @@ export const doctors: Doctor[] = [
     image: '/images/dr-bhavyashree.png',
     slug: 'dr-bhavyashree-sp',
     description:
-      'Dr. Bhavyashree S.P completed her MBBS and MS (OG) from Tirunelveli Medical College and holds a DNB in Obstetrics & Gynaecology. She is currently working as a Senior Assistant at Arunai Medical College, Tiruvannamalai. Registered with the Tamil Nadu Medical Council (Reg No: 179550), she provides comprehensive women\'s healthcare including pregnancy care, menstrual health management, and gynaecological consultations at Shree Vel\'s Clinic in Thirukovilur.',
+      'Dr. Bhavyashree S.P completed her MBBS and MS (OG) from Tirunelveli Medical College and holds a DNB in Obstetrics & Gynaecology. She is currently working as a Senior Resident at Arunai Medical College, Tiruvannamalai. Registered with the Tamil Nadu Medical Council (Reg No: 179550), she provides comprehensive women\'s healthcare including pregnancy care, menstrual health management, and gynaecological consultations at Shree Vel\'s Clinic in Thirukovilur.',
     services: [
       'Pre-conceptional Counselling',
       'Antenatal & Postnatal Care',

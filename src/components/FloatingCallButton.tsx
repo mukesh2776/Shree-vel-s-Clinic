@@ -3,7 +3,7 @@
 export default function FloatingCallButton() {
   return (
     <a
-      href="tel:+918778896736"
+      href="tel:+917338861038"
       className="fixed bottom-[5.5rem] right-6 z-50 flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group border-2 border-white/20"
       aria-label="Call Shree Vel's Clinic"
     >

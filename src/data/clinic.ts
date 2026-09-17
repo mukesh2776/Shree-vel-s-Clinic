@@ -4,9 +4,9 @@ export const clinic: ClinicInfo = {
   name: "Shree Vel's Clinic",
   fullName: "Shree Vel's Skin Care & Women's Health Clinic",
   tagline: 'Where Skin Meets Care, Women Meet Comfort',
-  phone: '8778896736',
-  alternatePhone: '7338861038',
-  whatsapp: '918778896736',
+  phone: '7338861038',
+  alternatePhone: '8778896736',
+  whatsapp: '8778896736',
   email: 'shreevelsclinic@gmail.com',
   mapsUrl:
     "https://www.google.com/maps/place/Shree+Vel's+skin+care+and+women's+health+Clinic(+DERMATOLOGY+%26GYNECOLOGY)/@11.9639097,79.2025602,17z/data=!4m8!3m7!1s0x3bacaf23e7f8cac5:0x5269132f4901fb43!8m2!3d11.9639097!4d79.2025602!9m1!1b1!16s%2Fg%2F11xrzh9tpq!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D",

@@ -169,6 +169,22 @@ export const dermatologyServices: Service[] = [
     department: 'dermatology',
     icon: '🛡️',
   },
+  {
+    id: 'nail-treatment',
+    name: 'Nail Disorders & Treatment',
+    description:
+      'Comprehensive clinical evaluation and treatment of nail conditions affecting fingernails and toenails. Diagnosis-driven approach for fungal, traumatic, and systemic nail disorders.',
+    details: [
+      'Fungal nail infections (Onychomycosis)',
+      'Ingrown toenail management',
+      'Nail dystrophy & discolouration',
+      'Psoriatic nail changes',
+      'Nail plate abnormalities & brittle nails',
+      'Paronychia & periungual infections',
+    ],
+    department: 'dermatology',
+    icon: '💅',
+  },
 ];
 
 export const obstetricsServices: Service[] = [

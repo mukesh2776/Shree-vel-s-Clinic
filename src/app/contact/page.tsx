@@ -86,7 +86,7 @@ export default function ContactPage() {
                     </a>
                     {clinic.alternatePhone && (
                       <a href={`tel:${clinic.alternatePhone}`} className="hover:underline">
-                        +91 733-8861038
+                        +91 {clinic.alternatePhone}
                       </a>
                     )}
                   </div>

@@ -75,7 +75,7 @@ export default function RootLayout({
     '@type': 'MedicalClinic',
     name: "Shree Vel's Skin Care & Women's Health Clinic",
     url: 'https://www.shreevelsclinic.com',
-    telephone: ['+91-8778896736', '+91-7338861038'],
+    telephone: ['+91-7338861038', '+91-8778896736'],
     email: 'shreevelsclinic@gmail.com',
     address: {
       '@type': 'PostalAddress',
